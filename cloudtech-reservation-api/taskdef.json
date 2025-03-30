@@ -1,0 +1,113 @@
+{
+    "containerDefinitions": [
+        {
+            "name": "sprint-container",
+            "image": "<IMAGE1_NAME>",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "sprint-container-80-tcp",
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "DB_NAME",
+                    "value": "reservation_db"
+                },
+                {
+                    "name": "DB_USERNAME",
+                    "value": "admin"
+                },
+                {
+                    "name": "DB_PORT",
+                    "value": "3306"
+                },
+                {
+                    "name": "API_PORT",
+                    "value": "80"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "value": "fNK8WAAgec77UitzZ6aT"
+                },
+                {
+                    "name": "DB_SERVERNAME",
+                    "value": "db-server.c9iqiieuy1af.ap-northeast-1.rds.amazonaws.com"
+                }
+            ],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/cloudtech-reservation-api-task",
+                    "mode": "non-blocking",
+                    "awslogs-create-group": "true",
+                    "max-buffer-size": "25m",
+                    "awslogs-region": "ap-northeast-1",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            },
+            "systemControls": []
+        }
+    ],
+    "family": "cloudtech-reservation-api-task",
+    "executionRoleArn": "arn:aws:iam::533267135387:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 5,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "registeredAt": "2025-03-03T17:35:57.441Z",
+    "registeredBy": "arn:aws:sts::533267135387:assumed-role/AWSCodePipelineServiceRole-ap-northeast-1-api-pipeline/1741023357128"
+}

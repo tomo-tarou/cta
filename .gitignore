@@ -1,0 +1,14 @@
+.DS_Store
+cloudtech_assignment_materials
+reboot_logs.txt
+sprint07/Terraform/assiginment_2/*
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+

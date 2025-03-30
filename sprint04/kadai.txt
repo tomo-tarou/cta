@@ -1,0 +1,29 @@
+※（ローカル環境）と記載がないものはAWSマネジメントコンソールにて実行
+
+1. IAMユーザを作成（ECRリポジトリにコンテナイメージをプッシュする権限を持たせる）
+2. IAMポリシーを作成（ECRリポジトリへのプッシュ権限を設定し、1で作成したユーザーにアタッチ）
+3. アクセスキーを作成
+4. アクセスキーの設定（ローカル環境）
+   - `aws configure` コマンドを実行（アクセスキー、シークレットアクセスキーを入力）
+5. ECRリポジトリの作成（リポジトリ名：my-repository）
+6. ECRにログイン（ローカル環境）
+   - `aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin <your-ecr-uri>`
+7. イメージの作成（ローカル環境）
+   - `docker image build --platform linux/x86_64 -t kadai-image .`
+8. タグ付け（ローカル環境）
+   - `docker image tag kadai-image:latest <your-ecr-uri>:latest`
+9. ECRにイメージをpush（ローカル環境）
+   - `docker image push <your-ecr-uri>:latest`
+10. ECRリポジトリの確認
+    - ECRリポジトリの一覧から`my-repository`を選択
+11. ECS クラスターの作成
+    - インフラストラクチャ：AWS Fargate（サーバーレス）を選択
+12. ECS タスク定義の作成
+    - 起動タイプ：AWS Fargate
+    - コンテナのイメージ URI 項目で、ECR にプッシュしたイメージの URI を設定
+13. ECS サービスの作成
+    - 作成したタスク定義を選択
+    - **パブリック IP を有効化 or ALB (ロードバランサー) を使用するか決める**
+14. ECS タスクの確認
+    - サービス作成後、タスクがデプロイされることを確認
+

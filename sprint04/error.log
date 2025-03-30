@@ -1,0 +1,87 @@
+[ec2-user@ip-10-0-1-63 nginx]$ sudo ls -a
+.  ..  access.log  error.log
+[ec2-user@ip-10-0-1-63 nginx]$ sudo cat error.log
+2025/01/21 04:20:29 [notice] 29240#29240: using the "epoll" event method
+2025/01/21 04:20:29 [notice] 29240#29240: nginx/1.26.2
+2025/01/21 04:20:29 [notice] 29240#29240: OS: Linux 6.1.119-129.201.amzn2023.x86_64
+2025/01/21 04:20:29 [notice] 29240#29240: getrlimit(RLIMIT_NOFILE): 65535:65535
+2025/01/21 04:20:29 [notice] 29241#29241: start worker processes
+2025/01/21 04:20:29 [notice] 29241#29241: start worker process 29242
+2025/01/21 04:23:26 [notice] 29241#29241: signal 3 (SIGQUIT) received from 1, shutting down
+2025/01/21 04:23:26 [notice] 29242#29242: gracefully shutting down
+2025/01/21 04:23:26 [notice] 29242#29242: exiting
+2025/01/21 04:23:26 [notice] 29242#29242: exit
+2025/01/21 04:23:26 [notice] 29241#29241: signal 17 (SIGCHLD) received from 29242
+2025/01/21 04:23:26 [notice] 29241#29241: worker process 29242 exited with code 0
+2025/01/21 04:23:26 [notice] 29241#29241: exit
+2025/01/21 04:23:27 [notice] 29444#29444: using the "epoll" event method
+2025/01/21 04:23:27 [notice] 29444#29444: nginx/1.26.2
+2025/01/21 04:23:27 [notice] 29444#29444: OS: Linux 6.1.119-129.201.amzn2023.x86_64
+2025/01/21 04:23:27 [notice] 29444#29444: getrlimit(RLIMIT_NOFILE): 65535:65535
+2025/01/21 04:23:27 [notice] 29445#29445: start worker processes
+2025/01/21 04:23:27 [notice] 29445#29445: start worker process 29446
+2025/01/21 05:31:42 [notice] 29445#29445: signal 3 (SIGQUIT) received from 1, shutting down
+2025/01/21 05:31:42 [notice] 29446#29446: gracefully shutting down
+2025/01/21 05:31:42 [notice] 29446#29446: exiting
+2025/01/21 05:31:42 [notice] 29446#29446: exit
+2025/01/21 05:31:42 [notice] 29445#29445: signal 17 (SIGCHLD) received from 29446
+2025/01/21 05:31:42 [notice] 29445#29445: worker process 29446 exited with code 0
+2025/01/21 05:31:42 [notice] 29445#29445: exit
+2025/01/21 05:32:24 [notice] 2184#2184: using the "epoll" event method
+2025/01/21 05:32:24 [notice] 2184#2184: nginx/1.26.2
+2025/01/21 05:32:24 [notice] 2184#2184: OS: Linux 6.1.119-129.201.amzn2023.x86_64
+2025/01/21 05:32:24 [notice] 2184#2184: getrlimit(RLIMIT_NOFILE): 65535:65535
+2025/01/21 05:32:24 [notice] 2193#2193: start worker processes
+2025/01/21 05:32:24 [notice] 2193#2193: start worker process 2195
+2025/01/21 05:35:17 [notice] 2193#2193: signal 3 (SIGQUIT) received from 1, shutting down
+2025/01/21 05:35:17 [notice] 2195#2195: gracefully shutting down
+2025/01/21 05:35:17 [notice] 2195#2195: exiting
+2025/01/21 05:35:17 [notice] 2195#2195: exit
+2025/01/21 05:35:17 [notice] 2193#2193: signal 17 (SIGCHLD) received from 2195
+2025/01/21 05:35:17 [notice] 2193#2193: worker process 2195 exited with code 0
+2025/01/21 05:35:17 [notice] 2193#2193: exit
+2025/01/21 05:36:58 [notice] 2190#2190: using the "epoll" event method
+2025/01/21 05:36:58 [notice] 2190#2190: nginx/1.26.2
+2025/01/21 05:36:58 [notice] 2190#2190: OS: Linux 6.1.119-129.201.amzn2023.x86_64
+2025/01/21 05:36:58 [notice] 2190#2190: getrlimit(RLIMIT_NOFILE): 65535:65535
+2025/01/21 05:36:58 [notice] 2196#2196: start worker processes
+2025/01/21 05:36:58 [notice] 2196#2196: start worker process 2198
+2025/01/21 06:52:33 [notice] 2196#2196: signal 3 (SIGQUIT) received from 1, shutting down
+2025/01/21 06:52:33 [notice] 2198#2198: gracefully shutting down
+2025/01/21 06:52:33 [notice] 2198#2198: exiting
+2025/01/21 06:52:33 [notice] 2198#2198: exit
+2025/01/21 06:52:33 [notice] 2196#2196: signal 17 (SIGCHLD) received from 2198
+2025/01/21 06:52:33 [notice] 2196#2196: worker process 2198 exited with code 0
+2025/01/21 06:52:33 [notice] 2196#2196: exit
+2025/01/21 07:18:45 [notice] 2209#2209: using the "epoll" event method
+2025/01/21 07:18:45 [notice] 2209#2209: nginx/1.26.2
+2025/01/21 07:18:45 [notice] 2209#2209: OS: Linux 6.1.119-129.201.amzn2023.x86_64
+2025/01/21 07:18:45 [notice] 2209#2209: getrlimit(RLIMIT_NOFILE): 65535:65535
+2025/01/21 07:18:45 [notice] 2220#2220: start worker processes
+2025/01/21 07:18:45 [notice] 2220#2220: start worker process 2221
+2025/01/21 07:26:28 [notice] 2220#2220: signal 3 (SIGQUIT) received from 1, shutting down
+2025/01/21 07:26:28 [notice] 2221#2221: gracefully shutting down
+2025/01/21 07:26:28 [notice] 2221#2221: exiting
+2025/01/21 07:26:28 [notice] 2221#2221: exit
+2025/01/21 07:26:28 [notice] 2220#2220: signal 17 (SIGCHLD) received from 2221
+2025/01/21 07:26:28 [notice] 2220#2220: worker process 2221 exited with code 0
+2025/01/21 07:26:28 [notice] 2220#2220: exit
+2025/02/02 08:20:24 [notice] 2222#2222: using the "epoll" event method
+2025/02/02 08:20:24 [notice] 2222#2222: nginx/1.26.2
+2025/02/02 08:20:24 [notice] 2222#2222: OS: Linux 6.1.119-129.201.amzn2023.x86_64
+2025/02/02 08:20:24 [notice] 2222#2222: getrlimit(RLIMIT_NOFILE): 65535:65535
+2025/02/02 08:20:24 [notice] 2236#2236: start worker processes
+2025/02/02 08:20:24 [notice] 2236#2236: start worker process 2237
+2025/02/02 10:18:21 [notice] 2236#2236: signal 3 (SIGQUIT) received from 1, shutting down
+2025/02/02 10:18:21 [notice] 2237#2237: gracefully shutting down
+2025/02/02 10:18:21 [notice] 2237#2237: exiting
+2025/02/02 10:18:21 [notice] 2237#2237: exit
+2025/02/02 10:18:21 [notice] 2236#2236: signal 17 (SIGCHLD) received from 2237
+2025/02/02 10:18:21 [notice] 2236#2236: worker process 2237 exited with code 0
+2025/02/02 10:18:21 [notice] 2236#2236: exit
+2025/02/02 10:37:34 [notice] 2218#2218: using the "epoll" event method
+2025/02/02 10:37:34 [notice] 2218#2218: nginx/1.26.2
+2025/02/02 10:37:34 [notice] 2218#2218: OS: Linux 6.1.119-129.201.amzn2023.x86_64
+2025/02/02 10:37:34 [notice] 2218#2218: getrlimit(RLIMIT_NOFILE): 65535:65535
+2025/02/02 10:37:34 [notice] 2231#2231: start worker processes
+2025/02/02 10:37:34 [notice] 2231#2231: start worker process 2232

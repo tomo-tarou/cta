@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Resources:
+  myEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      KeyName: test-ec2-key
+      ImageId: ami-05506fa68391b4cb1
+      InstanceType: t2.micro
+      Monitoring: false
+      SecurityGroupIds:
+        - !ImportValue SG1Name
+      SubnetId: !ImportValue Subnet1Name
+      Tags:
+        - Key: Name
+          Value: CFec2

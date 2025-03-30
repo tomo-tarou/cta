@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Parameters:
+  VPCCIDR:
+    Description: CIDR Block for VPC
+    Type: String
+    Default: 10.0.16.0/21
+  Name:
+    Description: Tags Name for VPC
+    Type: String
+    Default: MyVPC3fromCF
+
+Resources:
+  MyVPC3:
+    Type: "AWS::EC2::VPC"
+    Properties:
+      CidrBlock: !Ref VPCCIDR
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: !Ref Name

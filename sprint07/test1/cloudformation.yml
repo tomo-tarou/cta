@@ -1,0 +1,45 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Resources:
+  MyVPC2:
+    Type: "AWS::EC2::VPC"
+    Properties:
+      CidrBlock: "10.0.8.0/21"
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: "MyVPCfromCF"
+  subnetName:
+    Type: "AWS::EC2::Subnet"
+    Properties:
+      AvailabilityZone: "ap-northeast-1a"
+      VpcId: !Ref MyVPC2
+      CidrBlock: "10.0.8.0/24"
+      Tags:
+        - Key: Name
+          Value: "subnet1fromCF"
+  secGroupName:
+    Type: "AWS::EC2::SecurityGroup"
+    Properties:
+      GroupName: "GroupName-SG"
+      GroupDescription: "GroupDescription-SG"
+      VpcId: !Ref MyVPC2
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: "0.0.0.0/0"
+      Tags:
+        - Key: Name
+          Value: "SGfromCF"
+
+Outputs:
+  Subnet1:
+    Value: !Ref subnetName
+    Export:
+      Name: Subnet1Name
+  SG1:
+    Value: !GetAtt secGroupName.GroupId
+    Export:
+      Name: SG1Name
