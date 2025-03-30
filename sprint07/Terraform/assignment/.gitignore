@@ -1,7 +1,3 @@
-.DS_Store
-cloudtech_assignment_materials
-reboot_logs.txt
-/sprint07/Terraform/assignment_2/
 **/.terraform/*
 *.tfstate
 *.tfstate.*
@@ -11,4 +7,3 @@ override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
-
