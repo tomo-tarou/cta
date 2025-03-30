@@ -1,7 +1,7 @@
 .DS_Store
 cloudtech_assignment_materials
 reboot_logs.txt
-sprint07/Terraform/assiginment_2/*
+/sprint07/Terraform/assignment_2/*
 **/.terraform/*
 *.tfstate
 *.tfstate.*
