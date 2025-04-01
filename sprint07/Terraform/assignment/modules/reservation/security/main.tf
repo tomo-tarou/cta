@@ -34,17 +34,42 @@ resource "aws_security_group" "reservation_web_sg" {
   }
 }
 
+resource "aws_security_group" "reservation_alb_sg" {
+  vpc_id      = var.vpc_id
+  name        = "${var.env}-alb-sg"
+  description = "Security group for ALB in the ${var.env} environment"
+
+  ingress {
+    description = "Allow HTTP traffic from anywhere"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "${var.env}-alb-sg"
+  }
+}
+
 resource "aws_security_group" "reservation_api_sg" {
   vpc_id      = var.vpc_id
   name        = "${var.env}-api-sg"
   description = "Security group for api servers in the ${var.env} environment"
 
   ingress {
-    description = "Allow HTTP traffic from my IP"
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["${var.myip}/32"]
+    description     = "Allow HTTP traffic from ALB"
+    from_port       = 80
+    to_port         = 80
+    protocol        = "tcp"
+    security_groups = [aws_security_group.reservation_alb_sg.id]
   }
 
   ingress {

@@ -33,3 +33,7 @@ variable "db_subnet_group_name" {
 variable "db_sg_id" {
   type = string
 }
+
+variable "db_password" {
+  type        = string
+}

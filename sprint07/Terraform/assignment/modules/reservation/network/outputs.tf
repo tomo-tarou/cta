@@ -6,8 +6,20 @@ output "web_subnet_id" {
   value = aws_subnet.reservation_web_subnet_01.id
 }
 
-output "api_subnet_id" {
+output "api_subnet_01_id" {
   value = aws_subnet.reservation_api_subnet_01.id
+}
+
+output "api_subnet_02_id" {
+  value = aws_subnet.reservation_api_subnet_02.id
+}
+
+output "elb_subnet_01_id" {
+  value = aws_subnet.reservation_elb_subnet_01.id
+}
+
+output "elb_subnet_02_id" {
+  value = aws_subnet.reservation_elb_subnet_02.id
 }
 
 output "db_subnet_group_name" {
